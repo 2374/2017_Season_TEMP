@@ -15,8 +15,6 @@ public class Turret extends Subsystem {
 
 	    public void setSpeed(double speed) {motor.set(speed);}
 
-	    public void update() {setSpeed(0);}
-
 		@Override
 		protected void initDefaultCommand() {
 			setDefaultCommand(new TurretCommand());
