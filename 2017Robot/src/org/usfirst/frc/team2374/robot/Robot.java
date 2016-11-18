@@ -3,6 +3,7 @@ package org.usfirst.frc.team2374.robot;
 
 import org.usfirst.frc.team2374.robot.commands.DriveWithJoystick;
 import org.usfirst.frc.team2374.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team2374.robot.subsystems.Turret;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -26,6 +27,8 @@ public class Robot extends IterativeRobot {
 	public static Subsystem exampleSubsystem;
 
 	public static DriveTrain drivetrain;
+	
+	public static Turret turret;
 
 	Command autonomousCommand;
 	SendableChooser chooser;
@@ -38,7 +41,8 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		// creates the commands
 		oi = new OI();
-		drivetrain = new DriveTrain();
+		drivetrain = new DriveTrain(0,1,2,3);//CHANGE PORTS LATER
+		turret = new Turret(4);//CHANGE PORTS LATER
 		// determines commands used in autonomous period
 		chooser = new SendableChooser();
 		chooser.addDefault("Default Auto", new DriveWithJoystick());
