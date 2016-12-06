@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class TurretCommand extends Command {
 	
-	private static int speed;//Rate of rotation, TBD
+	private static double speed;//Rate of rotation, TBD
 	
 	public TurretCommand() {
 		requires(Robot.turret);
@@ -20,6 +20,7 @@ public class TurretCommand extends Command {
 
 	@Override
 	protected void execute() {
+		TurretCommand.speed = 0.5;//Change later
 		if (Robot.oi.joystick2.getRawButton(5)) Robot.turret.setSpeed(speed);//Change buttons later
 		if (Robot.oi.joystick2.getRawButton(6)) Robot.turret.setSpeed(-speed);//Change buttons later
 	}
