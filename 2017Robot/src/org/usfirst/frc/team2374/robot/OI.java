@@ -37,14 +37,20 @@ public class OI {
 	// button.whenReleased(new ExampleCommand());
 
 	public Joystick joystick;
+	
+	public Joystick joystick2;
 
 	public OI() {
 		joystick = new Joystick(0);
+		joystick2 = new Joystick(1);
 
 	}
 
 	public Joystick getJoystick() {
 		return joystick;
+	}
+	public Joystick getJoystick2(){
+		return joystick2;
 	}
 }
 
